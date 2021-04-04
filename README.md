@@ -1,4 +1,4 @@
-# Hough-Rectangle-and-Circle-Detection-from-Scratch
+# Hough-Rectangle-and-Circle-Detection
 This is an assignment for the CSCE460301 - Fundamental of Computer Vision (2021 Spring) course at AUC. All copy rights © go to Alaa Anani.
 Course Link: http://catalog.aucegypt.edu/preview_course_nopop.php?catoid=36&coid=83731
 
