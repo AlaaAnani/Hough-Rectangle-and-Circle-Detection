@@ -28,7 +28,7 @@ The way lines are detected is through the following steps:
 1. Find all pairs of parallel lines. A pair of lines $H_1(\rho_1, \theta_2)$ and $H_2(\rho_2, \theta_2)$ are parallel if $abs(\theta_1 - \theta_2) < \epsilon_{\theta}$
 
 2. After finding all pairs of $H_i$ and $H_j$ statisfying the parallel condition, this generates what is called extended peaks $P(\alpha, \zeta)$ where:
-3. 
+
 $\alpha = (\theta_i + theta_j)/2$
 
 $\zeta = (\rho_i - rho_j)/2$
