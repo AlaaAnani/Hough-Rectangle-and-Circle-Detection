@@ -1,7 +1,11 @@
 # Hough-Rectangle-and-Circle-Detection-from-Scratch
-This is for a Computer Vision course assignment at AUC. This Python project purely coded using Numpy takes a money image, determines the rectangles and circles in it and also counts the money. [Calibrated on the provided test set only].
+This is an assignment for the CSCE460301 - Fundamental of Computer Vision (2021 Spring) course at AUC. All copy rights © go to Alaa Anani.
+Course Link: http://catalog.aucegypt.edu/preview_course_nopop.php?catoid=36&coid=83731
 
-Photos for the test should be in the path "cases/...". Photos are found here:https://drive.google.com/drive/folders/1UA6Zf5m_ynZxdfdCLfrilFcy6X8-X23Y?usp=sharing
+This Python project purely coded using Numpy takes a money image, determines the rectangles and circles in it and also counts the money. [Calibrated on the provided test set only].
+
+Photos for the test should be in the path "cases/...". 
+Photos are found here: https://drive.google.com/drive/folders/1UA6Zf5m_ynZxdfdCLfrilFcy6X8-X23Y?usp=sharing
 
 # Hough Line Transform
 The way lines are detected is through the following steps:
@@ -100,7 +104,6 @@ Detected Circle 2 r= 54 cetner=( 534 , 724 )
 Overall detected circles count =  2
 Money Count in Pounds 2.0
 ```
-https://drive.google.com/file/d/
 ![image](https://drive.google.com/uc?export=view&id=1UKObAgklFoO-96-VjWVGbREzoJ591YZC)
 
 ## Case 2.1: Noisy Background & Non-Overlapping
