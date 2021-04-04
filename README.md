@@ -1,5 +1,7 @@
 # Hough-Rectangle-and-Circle-Detection-from-Scratch
-This is for a Computer Vision course assignment at AUC. This Python project purely coded using Numpy takes a money image, determines the rectangles and circles in it and also counts the money [Calibrated on the provided test set only].
+This is for a Computer Vision course assignment at AUC. This Python project purely coded using Numpy takes a money image, determines the rectangles and circles in it and also counts the money. [Calibrated on the provided test set only].
+
+Photos for the test should be in the path "cases/...". Photos are found here:https://drive.google.com/drive/folders/1UA6Zf5m_ynZxdfdCLfrilFcy6X8-X23Y?usp=sharing
 
 # Hough Line Transform
 The way lines are detected is through the following steps:
@@ -66,3 +68,267 @@ The papers I count are:
 2. 20-pound (based on its height, which is way more than the 1-pound paper)
 
 The program is limited to those since this is what my test set is composed of, but it can definitely be scaled to all egyptian money after experimting with them and knowing their width and height.
+
+## Case 1: Plain Background & Non-Overlapping
+```
+img = cv2.imread("cases/case1.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img,  r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+**Output:**
+```
+Detected Rectangle 1 width= 271 height= 541
+Corner points=
+ [[265 309]
+ [806 305]
+ [808 575]
+ [267 580]]
+Overall detected rectangles count =  1
+Detected Circle 1 r= 53 cetner=( 538 , 165 )
+Detected Circle 2 r= 54 cetner=( 534 , 724 )
+Overall detected circles count =  2
+Money Count in Pounds 2.0
+```
+https://drive.google.com/file/d/
+![image](https://drive.google.com/uc?export=view&id=1UKObAgklFoO-96-VjWVGbREzoJ591YZC)
+
+## Case 2.1: Noisy Background & Non-Overlapping
+```
+img = cv2.imread("cases/case2.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+
+**Output:**
+
+```
+Detected Rectangle 1 width= 281 height= 609
+Corner points=
+ [[205 302]
+ [815 300]
+ [816 581]
+ [206 583]]
+Overall detected rectangles count =  1
+Detected Circle 1 r= 53 cetner=( 388 , 126 )
+Detected Circle 2 r= 53 cetner=( 89 , 606 )
+Detected Circle 3 r= 53 cetner=( 989 , 763 )
+Detected Circle 4 r= 53 cetner=( 764 , 801 )
+Detected Circle 5 r= 54 cetner=( 89 , 126 )
+Overall detected circles count =  5
+Money Count in Pounds 22.5
+```
+![image](https://drive.google.com/uc?export=view&id=1UKQwtZOX5KCik2YiRKeZpnCm9h2qD_Aj)
+
+## Case 2.2: Medium-noise Background & Non-Overlapping
+```
+img = cv2.imread("cases/case2_medium.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+**Output:**
+```
+
+Detected Rectangle 1 width= 280 height= 612
+Corner points=
+ [[208 311]
+ [821 306]
+ [823 587]
+ [210 591]]
+Overall detected rectangles count =  1
+Detected Circle 1 r= 53 cetner=( 994 , 771 )
+Detected Circle 2 r= 54 cetner=( 94 , 134 )
+Detected Circle 3 r= 54 cetner=( 393 , 134 )
+Detected Circle 4 r= 54 cetner=( 768 , 809 )
+Detected Circle 5 r= 56 cetner=( 94 , 614 )
+Overall detected circles count =  5
+Money Count in Pounds 23.0
+```
+![image](https://drive.google.com/uc?export=view&id=1UKgcWKXHk01OoXNk6or96MutWyXVjI4n)
+
+## Case 2.3: Hard-noise Background & Non-Overlapping
+
+```
+img = cv2.imread("cases/case2_hard.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+
+**Output:**
+
+```
+Detected Rectangle 1 width= 279 height= 611
+Corner points=
+ [[208 313]
+ [819 305]
+ [823 584]
+ [212 592]]
+Overall detected rectangles count =  1
+Detected Circle 1 r= 54 cetner=( 94 , 134 )
+Detected Circle 2 r= 54 cetner=( 393 , 134 )
+Detected Circle 3 r= 54 cetner=( 995 , 771 )
+Detected Circle 4 r= 54 cetner=( 769 , 808 )
+Detected Circle 5 r= 56 cetner=( 93 , 614 )
+Overall detected circles count =  5
+Money Count in Pounds 23.0
+```
+![image](https://drive.google.com/uc?export=view&id=1UKsa3HdXX4VNBT1cceiqOXaLerTAO_Pr)
+
+## Case 3: Plain Background & Overlapping
+
+```
+img = cv2.imread("cases/case3.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+**Output:**
+```
+Detected Rectangle 1 width= 292 height= 647
+Corner points=
+ [[112 320]
+ [677   5]
+ [820 262]
+ [254 576]]
+Detected Rectangle 2 width= 298 height= 599
+Corner points=
+ [[245 533]
+ [844 529]
+ [846 828]
+ [246 831]]
+Overall detected rectangles count =  2
+Detected Circle 1 r= 53 cetner=( 994 , 669 )
+Detected Circle 2 r= 54 cetner=( 94 , 138 )
+Detected Circle 3 r= 54 cetner=( 366 , 138 )
+Detected Circle 4 r= 54 cetner=( 847 , 836 )
+Detected Circle 5 r= 56 cetner=( 93 , 618 )
+Overall detected circles count =  5
+Money Count in Pounds 24.0
+```
+![image](https://drive.google.com/uc?export=view&id=1UL1bjpRU_bM_BSIVr1ei2I-uG9Yo7Wr4)
+
+
+## Case 4.1: Noisy Background & Overlapping
+
+```
+img = cv2.imread("cases/case4.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+
+**Output:**
+
+```
+Detected Rectangle 1 width= 292 height= 646
+Corner points=
+ [[113 321]
+ [678   5]
+ [821 260]
+ [256 575]]
+Detected Rectangle 2 width= 300 height= 598
+Corner points=
+ [[247 531]
+ [845 527]
+ [847 827]
+ [248 831]]
+Overall detected rectangles count =  2
+Detected Circle 1 r= 53 cetner=( 995 , 668 )
+Detected Circle 2 r= 54 cetner=( 95 , 137 )
+Detected Circle 3 r= 54 cetner=( 367 , 137 )
+Detected Circle 4 r= 54 cetner=( 848 , 835 )
+Detected Circle 5 r= 56 cetner=( 95 , 617 )
+Overall detected circles count =  5
+Money Count in Pounds 24.0
+```
+![image](https://drive.google.com/uc?export=view&id=1ULHQKC-B7yXSOyt06VAaZoviEg1RPu2A)
+
+## Case 4.2: Medium-noise Background & Overlapping
+
+```
+img = cv2.imread("cases/case4_medium.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+
+**Output:**
+
+```
+Detected Rectangle 1 width= 296 height= 645
+Corner points=
+ [[106 317]
+ [671   3]
+ [815 263]
+ [250 576]]
+Detected Rectangle 2 width= 300 height= 599
+Corner points=
+ [[240 533]
+ [839 527]
+ [843 827]
+ [244 833]]
+Overall detected rectangles count =  2
+Detected Circle 1 r= 53 cetner=( 389 , 139 )
+Detected Circle 2 r= 53 cetner=( 990 , 670 )
+Detected Circle 3 r= 54 cetner=( 90 , 139 )
+Detected Circle 4 r= 54 cetner=( 839 , 833 )
+Detected Circle 5 r= 56 cetner=( 90 , 619 )
+Overall detected circles count =  5
+Money Count in Pounds 24.0
+```
+![image](https://drive.google.com/uc?export=view&id=1ULnOC2934vx_6yA4TIvQ2HFZhYy_5N7C)
+
+## Case 4.3: Hard-noise Background & Overlapping
+
+```
+img = cv2.imread("cases/case4_hard.png")
+edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
+img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
+print("Money Count in Pounds", countMoney(circles, areas))
+img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
+graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
+```
+
+**Output:**
+
+```
+Detected Rectangle 1 width= 295 height= 646
+Corner points=
+ [[148 318]
+ [715   4]
+ [857 263]
+ [291 576]]
+Detected Rectangle 2 width= 304 height= 603
+Corner points=
+ [[247 528]
+ [850 524]
+ [852 829]
+ [248 832]]
+Overall detected rectangles count =  2
+Detected Circle 1 r= 53 cetner=( 994 , 670 )
+Detected Circle 2 r= 54 cetner=( 94 , 139 )
+Detected Circle 3 r= 54 cetner=( 394 , 139 )
+Detected Circle 4 r= 54 cetner=( 843 , 833 )
+Detected Circle 5 r= 56 cetner=( 94 , 619 )
+Overall detected circles count =  5
+Money Count in Pounds 24.0
+```
+
+![image](https://drive.google.com/uc?export=view&id=1ULp4yZLJzY4AiP68t0S1KiTFDjKxvp5M)
