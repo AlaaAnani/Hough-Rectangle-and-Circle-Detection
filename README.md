@@ -34,7 +34,7 @@ The way lines are detected is through the following steps:
 
 2. After finding all pairs of <img src="https://render.githubusercontent.com/render/math?math=H_i"> and <img src="https://render.githubusercontent.com/render/math?math=H_j"> statisfying the parallel condition, this generates what is called extended peaks <img src="https://render.githubusercontent.com/render/math?math=P(\alpha, \zeta)"> where:
 
-<img src="https://render.githubusercontent.com/render/math?math=\alpha = (\theta_i ++ \theta_j)/2">
+<img src="https://render.githubusercontent.com/render/math?math=\alpha=(\theta_i"> + <img src="https://render.githubusercontent.com/render/math?math=\theta_j)/2">
 
 <img src="https://render.githubusercontent.com/render/math?math=\zeta= (\rho_i - \rho_j)/2">
 
@@ -42,7 +42,7 @@ The way lines are detected is through the following steps:
 
 <img src="https://render.githubusercontent.com/render/math?math=\Delta \alpha = ||\alpha_k - \alpha_l| - 90| < \epsilon_{\alpha}"> where <img src="https://render.githubusercontent.com/render/math?math=\epsilon_{\alpha}"> is the angular threshold that determines whether two <img src="https://render.githubusercontent.com/render/math?math=P_i">s are perspendicular or not. 
 
-In the code, <img src="https://render.githubusercontent.com/render/math?math=\epsilon_{\theta}=\epsilon_{\alpha}=\ang{3}">
+In the code, <img src="https://render.githubusercontent.com/render/math?math=\epsilon_{\theta}=\epsilon_{\alpha}=3">°
 
 4. The found 4 lines forming every rectangle are then passed to `get_lines_intersection` function which returns a point of intersection given two lines defined by 2 points each. The relation found here: https://en.wikipedia.org/wiki/Line%E2%80%93line_intersection#Given_two_points_on_each_line is used to return the intersection point.
 
@@ -54,9 +54,9 @@ In the code, <img src="https://render.githubusercontent.com/render/math?math=\ep
 
 1. I build a 3D space of <img src="https://render.githubusercontent.com/render/math?math=(a, b, \theta)">, where a circle is defined as the following:
 
-<img src="https://render.githubusercontent.com/render/math?math=x = a + r*cos(\theta)">
+<img src="https://render.githubusercontent.com/render/math?math=x = a"> + <img src="https://render.githubusercontent.com/render/math?math=r*cos(\theta)">
 
-<img src="https://render.githubusercontent.com/render/math?math=y = b + r*sin(\theta)">
+<img src="https://render.githubusercontent.com/render/math?math=y = b"> + <img src="https://render.githubusercontent.com/render/math?math=r*sin(\theta)">
 
 The flow is similar to the line hough transform except is scaled to searching a third dimension specified by the `r_range` for the radius.
 
