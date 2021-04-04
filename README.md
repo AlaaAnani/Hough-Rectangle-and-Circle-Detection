@@ -27,7 +27,7 @@ The way lines are detected is through the following steps:
 
 8. Build a histogram of the accumulator space and filter the lines based on the `threshold` specified.
 
-9. Filter similar lines (Lines whose difference in <img src="https://render.githubusercontent.com/render/math?math=\rho"> and <img src="https://render.githubusercontent.com/render/math?math=\theta$">
+9. Filter similar lines (Lines whose difference in <img src="https://render.githubusercontent.com/render/math?math=\rho"> and <img src="https://render.githubusercontent.com/render/math?math=\theta$"> is below the `line_similarity_threshold`.
 # Rectangles Detection from Lines Resulting from Hough Transform
 
 1. Find all pairs of parallel lines. A pair of lines <img src="https://render.githubusercontent.com/render/math?math=H_1(\rho_1, \theta_1)"> and <img src="https://render.githubusercontent.com/render/math?math=H_2(\rho_2, \theta_2)"> are parallel if <img src="https://render.githubusercontent.com/render/math?math=abs(\theta_1 - \theta_2) < \epsilon_{\theta}">
