@@ -34,9 +34,9 @@ The way lines are detected is through the following steps:
 
 2. After finding all pairs of <img src="https://render.githubusercontent.com/render/math?math=H_i"> and <img src="https://render.githubusercontent.com/render/math?math=H_j"> statisfying the parallel condition, this generates what is called extended peaks <img src="https://render.githubusercontent.com/render/math?math=P(\alpha, \zeta)"> where:
 
-<img src="https://render.githubusercontent.com/render/math?math=\alpha=(\theta_i + \theta_j)/2">
+<img src="https://render.githubusercontent.com/render/math?math=\alpha = (\theta_i ++ \theta_j)/2">
 
-<img src="https://render.githubusercontent.com/render/math?math=\zeta=(\rho_i - \rho_j)/2">
+<img src="https://render.githubusercontent.com/render/math?math=\zeta= (\rho_i - \rho_j)/2">
 
 3. By looping over all <img src="https://render.githubusercontent.com/render/math?math=P_i">s found, we need to find peaks that are perpedindecular to each other. <img src="https://render.githubusercontent.com/render/math?math=P_k"> and <img src="https://render.githubusercontent.com/render/math?math=P_l"> are perpedindecular iff:
 
