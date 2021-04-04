@@ -6,7 +6,7 @@ Photos for the test should be in the path "cases/...". Photos are found here:htt
 # Hough Line Transform
 The way lines are detected is through the following steps:
 
-1. Apply medianBlur filter (7, 7)
+1. Apply medianBlur filter (7)
 
 2. Apply GaussianBlur filter (7, 7)
 
@@ -68,6 +68,14 @@ The papers I count are:
 2. 20-pound (based on its height, which is way more than the 1-pound paper)
 
 The program is limited to those since this is what my test set is composed of, but it can definitely be scaled to all egyptian money after experimting with them and knowing their width and height.
+## Imports
+```
+import cv2
+from transform import hough_windowed_rectangle, hough_cricles
+from utils import plot_hough_space, graph_output, graph_rectangles_and_circles, countMoney
+from skimage.io import imshow
+import matplotlib.pyplot as plt
+```
 
 ## Case 1: Plain Background & Non-Overlapping
 ```
