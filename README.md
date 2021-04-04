@@ -24,7 +24,7 @@ The way lines are detected is through the following steps:
 9. Filter similar lines (Lines whose difference in <img src="https://render.githubusercontent.com/render/math?math=\rho"> and <img src="https://render.githubusercontent.com/render/math?math=\theta$">
 # Rectangles Detection from Lines Resulting from Hough Transform
 
-1. Find all pairs of parallel lines. A pair of lines <img src="https://render.githubusercontent.com/render/math?math=H_1(\rho_1, \theta_2)"> and <img src="https://render.githubusercontent.com/render/math?math=H_2(\rho_2, \theta_2)"> are parallel if <img src="https://render.githubusercontent.com/render/math?math=abs(\theta_1 - \theta_2) < \epsilon_{\theta}">
+1. Find all pairs of parallel lines. A pair of lines <img src="https://render.githubusercontent.com/render/math?math=H_1(\rho_1, \theta_1)"> and <img src="https://render.githubusercontent.com/render/math?math=H_2(\rho_2, \theta_2)"> are parallel if <img src="https://render.githubusercontent.com/render/math?math=abs(\theta_1 - \theta_2) < \epsilon_{\theta}">
 
 2. After finding all pairs of <img src="https://render.githubusercontent.com/render/math?math=H_i"> and <img src="https://render.githubusercontent.com/render/math?math=H_j"> statisfying the parallel condition, this generates what is called extended peaks <img src="https://render.githubusercontent.com/render/math?math=P(\alpha, \zeta)"> where:
 
