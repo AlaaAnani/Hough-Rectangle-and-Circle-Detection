@@ -73,7 +73,7 @@ The papers I count are:
 
 The program is limited to those since this is what my test set is composed of, but it can definitely be scaled to all egyptian money after experimting with them and knowing their width and height.
 ## Imports
-```
+```python
 import cv2
 from transform import hough_windowed_rectangle, hough_cricles
 from utils import plot_hough_space, graph_output, graph_rectangles_and_circles, countMoney
@@ -82,7 +82,7 @@ import matplotlib.pyplot as plt
 ```
 
 ## Case 1: Plain Background & Non-Overlapping
-```
+```python
 img = cv2.imread("cases/case1.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img,  r_range=(40, 60))
@@ -91,7 +91,7 @@ img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
 graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 ```
 **Output:**
-```
+```python
 Detected Rectangle 1 width= 271 height= 541
 Corner points=
  [[265 309]
@@ -107,7 +107,7 @@ Money Count in Pounds 2.0
 ![image](https://drive.google.com/uc?export=view&id=1UKObAgklFoO-96-VjWVGbREzoJ591YZC)
 
 ## Case 2.1: Noisy Background & Non-Overlapping
-```
+```python
 img = cv2.imread("cases/case2.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -118,7 +118,7 @@ graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 
 **Output:**
 
-```
+```python
 Detected Rectangle 1 width= 281 height= 609
 Corner points=
  [[205 302]
@@ -137,7 +137,7 @@ Money Count in Pounds 22.5
 ![image](https://drive.google.com/uc?export=view&id=1UKQwtZOX5KCik2YiRKeZpnCm9h2qD_Aj)
 
 ## Case 2.2: Medium-noise Background & Non-Overlapping
-```
+```python
 img = cv2.imread("cases/case2_medium.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -146,8 +146,7 @@ img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
 graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 ```
 **Output:**
-```
-
+```python
 Detected Rectangle 1 width= 280 height= 612
 Corner points=
  [[208 311]
@@ -167,7 +166,7 @@ Money Count in Pounds 23.0
 
 ## Case 2.3: Hard-noise Background & Non-Overlapping
 
-```
+```python
 img = cv2.imread("cases/case2_hard.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -178,7 +177,7 @@ graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 
 **Output:**
 
-```
+```python
 Detected Rectangle 1 width= 279 height= 611
 Corner points=
  [[208 313]
@@ -198,7 +197,7 @@ Money Count in Pounds 23.0
 
 ## Case 3: Plain Background & Overlapping
 
-```
+```python
 img = cv2.imread("cases/case3.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -207,7 +206,7 @@ img_w_rect_circles = graph_rectangles_and_circles(img, rectangles, circles)
 graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 ```
 **Output:**
-```
+```python
 Detected Rectangle 1 width= 292 height= 647
 Corner points=
  [[112 320]
@@ -234,7 +233,7 @@ Money Count in Pounds 24.0
 
 ## Case 4.1: Noisy Background & Overlapping
 
-```
+```python
 img = cv2.imread("cases/case4.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -245,7 +244,7 @@ graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 
 **Output:**
 
-```
+```python
 Detected Rectangle 1 width= 292 height= 646
 Corner points=
  [[113 321]
@@ -271,7 +270,7 @@ Money Count in Pounds 24.0
 
 ## Case 4.2: Medium-noise Background & Overlapping
 
-```
+```python
 img = cv2.imread("cases/case4_medium.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -282,7 +281,7 @@ graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 
 **Output:**
 
-```
+```python
 Detected Rectangle 1 width= 296 height= 645
 Corner points=
  [[106 317]
@@ -308,7 +307,7 @@ Money Count in Pounds 24.0
 
 ## Case 4.3: Hard-noise Background & Overlapping
 
-```
+```python
 img = cv2.imread("cases/case4_hard.png")
 edge_image, img_lines, img_rectangles, hough_space, peaks, lines, rectangles, areas = hough_windowed_rectangle(img)
 img_w_circles, circles = hough_cricles(img, region=20, threshold=15, r_range=(40, 60))
@@ -319,7 +318,7 @@ graph_output(edge_image, img_lines, img_w_rect_circles, hough_space, peaks)
 
 **Output:**
 
-```
+```python
 Detected Rectangle 1 width= 295 height= 646
 Corner points=
  [[148 318]
