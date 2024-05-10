@@ -104,7 +104,7 @@ Detected Circle 2 r= 54 cetner=( 534 , 724 )
 Overall detected circles count =  2
 Money Count in Pounds 2.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1UKObAgklFoO-96-VjWVGbREzoJ591YZC)
+![image](report/case1.png)
 
 ## Case 2.1: Noisy Background & Non-Overlapping
 ```python
@@ -134,7 +134,7 @@ Detected Circle 5 r= 54 cetner=( 89 , 126 )
 Overall detected circles count =  5
 Money Count in Pounds 22.5
 ```
-![image](https://drive.google.com/uc?export=view&id=1UKQwtZOX5KCik2YiRKeZpnCm9h2qD_Aj)
+![image](report/case2.png)
 
 ## Case 2.2: Medium-noise Background & Non-Overlapping
 ```python
@@ -162,7 +162,7 @@ Detected Circle 5 r= 56 cetner=( 94 , 614 )
 Overall detected circles count =  5
 Money Count in Pounds 23.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1UKgcWKXHk01OoXNk6or96MutWyXVjI4n)
+![image](report/case2_medium.png)
 
 ## Case 2.3: Hard-noise Background & Non-Overlapping
 
@@ -193,7 +193,7 @@ Detected Circle 5 r= 56 cetner=( 93 , 614 )
 Overall detected circles count =  5
 Money Count in Pounds 23.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1UKsa3HdXX4VNBT1cceiqOXaLerTAO_Pr)
+![image](report/case2_hard.png)
 
 ## Case 3: Plain Background & Overlapping
 
@@ -228,7 +228,7 @@ Detected Circle 5 r= 56 cetner=( 93 , 618 )
 Overall detected circles count =  5
 Money Count in Pounds 24.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1UL1bjpRU_bM_BSIVr1ei2I-uG9Yo7Wr4)
+![image](report/case3.png)
 
 
 ## Case 4.1: Noisy Background & Overlapping
@@ -266,7 +266,7 @@ Detected Circle 5 r= 56 cetner=( 95 , 617 )
 Overall detected circles count =  5
 Money Count in Pounds 24.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1ULHQKC-B7yXSOyt06VAaZoviEg1RPu2A)
+![image](report/case4.png)
 
 ## Case 4.2: Medium-noise Background & Overlapping
 
@@ -303,7 +303,7 @@ Detected Circle 5 r= 56 cetner=( 90 , 619 )
 Overall detected circles count =  5
 Money Count in Pounds 24.0
 ```
-![image](https://drive.google.com/uc?export=view&id=1ULnOC2934vx_6yA4TIvQ2HFZhYy_5N7C)
+![image](report/case4_medium.png)
 
 ## Case 4.3: Hard-noise Background & Overlapping
 
@@ -341,4 +341,4 @@ Overall detected circles count =  5
 Money Count in Pounds 24.0
 ```
 
-![image](https://drive.google.com/uc?export=view&id=1ULp4yZLJzY4AiP68t0S1KiTFDjKxvp5M)
+![image](report/case4_hard.png)
